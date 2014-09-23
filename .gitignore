@@ -5,3 +5,6 @@ composer.lock
 .DS_Store
 Thumbs.db
 *.swp
+Capfile
+config/deploy.rb
+config/deploy/
