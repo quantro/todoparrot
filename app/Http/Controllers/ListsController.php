@@ -17,10 +17,11 @@ class ListsController extends Controller {
     if (\Auth::check()) {
 
         $id = \Auth::id();
-        
-        $user = \todoparrot\User::find($id);
+
+        // Retrieve the user's lists, ordered by creation date descending 
+        $lists = \todoparrot\User::find($id)->lists()->orderBy('created_at', 'desc')->get();
      
-        return View('lists.index')->with('lists', $user->lists);
+        return View('lists.index')->with('lists', $lists);
 
     } else {
 
