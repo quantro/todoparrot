@@ -8,8 +8,7 @@
 {{ $list->description }}
 </p>
 
-<h2>Tasks</h2>
-
+<h3>Tasks</h3>
 
 @if($list->tasks->count() == 0)
 
