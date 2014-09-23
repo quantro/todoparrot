@@ -22,7 +22,7 @@ Creating a TODOParrot account is free and easy. Once created, you'll be able to 
 </div>
 
 <div class="form-group">
-    {!! Form::label('Your First Name') !!}
+    {!! Form::label('Your Last Name') !!}
     {!! Form::text('last_name', null, array('class'=>'form-control', 'placeholder'=>'Last Name')) !!}
 </div>
 <div class="form-group">
