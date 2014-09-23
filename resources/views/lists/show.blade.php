@@ -34,7 +34,7 @@ No tasks assigned to this list. <a href="/lists/{{$list->id}}/tasks/create">Add 
 
           <div style="float: right; padding-right: 5px;">
             {!! Form::open(array('route' => array('lists.tasks.destroy', $list->id, $task->id), 'method' => 'delete')) !!}
-                  <button type="submit" href="{{ URL::route('lists.tasks.destroy', $list->id, $task->id) }}" class="glyphicon glyphicon-remove" title="Delete task"></button>
+                  <button type="submit" href="{{ URL::route('lists.tasks.destroy', [$list->id, $task->id]) }}" class="glyphicon glyphicon-remove" title="Delete task"></button>
               {!! Form::close() !!}
           </div>
 
@@ -42,16 +42,16 @@ No tasks assigned to this list. <a href="/lists/{{$list->id}}/tasks/create">Add 
               {!! Form::open(array('route' => array('complete_task', $list->id, $task->id), 'method' => 'post')) !!}
 
                   @if($task->done)
-                  <button type="submit" href="{{ URL::route('complete_task', $list->id, $task->id) }}" class="glyphicon glyphicon-repeat" title="Undo"></button>
+                  <button type="submit" href="{{ URL::route('complete_task', [$list->id, $task->id]) }}" class="glyphicon glyphicon-repeat" title="Undo"></button>
                   @else
-                  <button type="submit" href="{{ URL::route('complete_task', $list->id, $task->id) }}" class="glyphicon glyphicon-ok" title="Mark complete"></button>
+                  <button type="submit" href="{{ URL::route('complete_task', [$list->id, $task->id]) }}" class="glyphicon glyphicon-ok" title="Mark complete"></button>
                   @endif
               {!! Form::close() !!}
           </div>
 
           <div style="float: right; padding-right: 5px;">
           {!! Form::open(array('route' => array('lists.tasks.edit', $list->id, $task->id), 'method' => 'get')) !!}
-                  <button type="submit" href="{{ URL::route('lists.tasks.edit', $list->id, $task->id) }}" class="glyphicon glyphicon-pencil" title="Edit Task"></button>
+                  <button type="submit" href="{{ URL::route('lists.tasks.edit', [$list->id, $task->id]) }}" class="glyphicon glyphicon-pencil" title="Edit Task"></button>
               {!! Form::close() !!}
           </div>
 
