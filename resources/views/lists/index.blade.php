@@ -10,10 +10,11 @@
 
   @if (count($lists) > 0)
       @foreach ($lists as $list)      
+      <h3><a href="{{ URL::to('lists/' . $list->id) }}">{{ $list->name }}</a></h3>
       <p>
-        <strong><a href="{{ URL::to('lists/' . $list->id) }}">{{ $list->name }}</a></strong><br />
         {{ $list->description }}<br />
-        {{ $list->tasks()->count() }} tasks remaining
+        {{ date("F d, Y", strtotime($list->created_at)) }}<br />
+        {{ $list->remainingTasks() }} / {{ $list->tasks()->count() }} tasks remaining
        </p>
       @endforeach
     @else
