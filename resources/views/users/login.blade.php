@@ -7,7 +7,7 @@
 <h2>Sign In to Your TODOParrot Account</h2>
 
 <p>
-Sign in to your TODOParrot account to continue maximizing your productivity!
+Sign in to your TODOParrot account to begin maximizing your productivity!
 </p>
 
 <ul>
@@ -26,7 +26,7 @@ Sign in to your TODOParrot account to continue maximizing your productivity!
 </div>
  
 <div class="form-group">
-    {!! Form::submit('Login', array('class'=>'btn btn-primary')) !!}
+    {!! Form::submit('Sign In', array('class'=>'btn btn-primary')) !!}
 </div>
 {!! Form::close() !!}
 </div>
