@@ -25,6 +25,11 @@ Sign in to your TODOParrot account to begin maximizing your productivity!
     {!! Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password')) !!}
 </div>
  
+<div class="checkbox">
+    {!! Form::label('Remember me') !!}
+    {!! Form::checkbox('done', 'true') !!}
+</div>
+
 <div class="form-group">
     {!! Form::submit('Sign In', array('class'=>'btn btn-primary')) !!}
 </div>

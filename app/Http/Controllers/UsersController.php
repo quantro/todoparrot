@@ -69,14 +69,21 @@ class UsersController extends Controller {
         'email'   => \Input::get('email'),
         'password'  => \Input::get('password')
       );
-      
-      if (\Auth::attempt($userdata)) {
+
+      if (\Input::get('remember') == true)
+      {
+        $remember = true;
+      } else {
+        $remember = false;
+      }
+
+      if (\Auth::attempt($userdata, $remember)) {
 
         return \Redirect::route('home')->with('message', 'You have successfully signed in.'); 
 
       } else {
 
-        return \Redirect::route('login')->with('message', 'Could not login');;
+        return \Redirect::route('login')->with('message', 'Could not sign you into the system');
 
       }
 
