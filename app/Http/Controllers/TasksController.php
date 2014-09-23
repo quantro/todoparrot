@@ -91,7 +91,7 @@ class TasksController extends Controller {
 
       $task->save();
 
-      return \Redirect::route('lists.show', $list->id)->with('message', 'Task updated!');
+      return \Redirect::route('lists.show', [$list->id])->with('message', 'Task updated!');
 
     } else {
       return \Redirect::route('home')->with('message', 'Authorization error: you do not own this list.');
@@ -160,7 +160,7 @@ class TasksController extends Controller {
 
           $task->delete();
 
-          return \Redirect::route('lists.show', $list->id)->with('message', 'Task deleted!');
+          return \Redirect::route('lists.show', [$list->id])->with('message', 'Task deleted!');
 
       }
 
