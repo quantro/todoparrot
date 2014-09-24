@@ -10,9 +10,9 @@
     </p>
 
     @if (! Auth::check())
-      <a href="/users/create" class="btn btn-primary">Create an Account</a>
+      <a href="{{ URL::route('users.create') }}" class="btn btn-primary">Create an account</a>
     @else
-      <a href="/lists" class="btn btn-primary">View Your Lists</a>
+      <a href="{{ URL::route('lists.index') }}" class="btn btn-primary">View Your Lists</a>
     @endif
   </div>
 </div>

@@ -35,14 +35,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
-        <li><a href="/lists">Your Lists</a></li>
+        <li><a href="{{ URL::Route('lists.index') }}">Your Lists</a></li>
         <li><a href="/about">About</a></li>
           @if(!Auth::check()) 
-            <li>{!! HTML::link('users/create', 'Create Account') !!}</li>
-            <li>{!! HTML::link('/login', 'Sign In') !!}</li>
+            <li><a href="{{ URL::Route('users.create') }}">Create Account</a></li>
+            <li><a href="{{ URL::Route('login') }}">Sign In</a></li>
           @else
-            <li>{!! HTML::link('/users', 'Hi, '. Auth::user()->first_name) !!}</li>
-            <li>{!! HTML::link('/logout', 'Sign Out') !!}</li>
+            <li><a href="{{ URL::Route('users.index') }}">Hi, {{Auth::user()->first_name}}</a></li>
+            <li><a href="{{ URL::Route('logout') }}">Sign Out</a></li>
           @endif
         </li>
       </ul>
