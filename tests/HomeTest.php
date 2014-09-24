@@ -31,4 +31,14 @@ class HomeTest extends TestCase {
     $crawler = $this->client->request('GET', '/');
     $this->assertCount(1, $crawler->filter('li:contains("Sign In")'));
   }
+
+  public function testUserClicksRegLinkAndIsTakenToRegPage()
+  {
+    $crawler = $this->client->request('GET', '/');
+    $link = $crawler->selectLink('Create an account')->link();
+    $crawler = $this->client->click($link);
+    $this->assertEquals(Route::current()->getName(), 'users.create');
+    $this->assertCount(1, $crawler->filter('h1:contains("Create a TODOParrot Account")'));
+  }
+
 }
