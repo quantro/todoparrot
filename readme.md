@@ -11,8 +11,11 @@ TODOParrot is built atop the forthcoming Laravel 5. While likely fairly unstable
 * User authentication
 * Unit testing
 
+TODOParrot is *not a finished product*! I work on the project in conjunction with the examples found in the forthcoming book.
+
 In the coming days and weeks I'll continue to improve TODOParrot as I continue writing and refining the book. In particular I plan on demonstrating the following features:
 
+* Improved form workflow: Streamlining of the form validation process.
 * Database seeding: I'll provide some sample account and list data so you can experiment using a realistic data set. 
 * Advanced unit testing: Plenty to do here
 * Additional account features: Account confirmation and password recovery, among others
