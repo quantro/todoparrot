@@ -14,5 +14,5 @@
 $env = $app->detectEnvironment([
 
 	'local' => ['WJG-MACBOOK.local'],
-
+  'production' => ['ware']
 ]);
