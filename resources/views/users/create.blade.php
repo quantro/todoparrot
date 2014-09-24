@@ -4,7 +4,7 @@
 <div class="col-md-6">
 {!! Form::open(array('route' => 'users.store', 'class' => 'form')) !!}
     
-<h2>Create a TODOParrot Account</h2>
+<h1>Create a TODOParrot Account</h1>
 
 <p>
 Creating a TODOParrot account is free and easy. Once created, you'll be able to manage personal TODO lists and be more productive than ever!
