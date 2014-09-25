@@ -8,7 +8,7 @@ TODOParrot is built atop the forthcoming Laravel 5. While likely fairly unstable
 * Model associations 
 * Forms integration 
 * Database queries 
-* User authentication
+* User authentication: TODOParrot does *not* currently use the brand new Auth generators found in a recent Laravel 5 commit. I will be updating TODOParrot very soon to take advantage of this great feature.
 * Unit testing
 
 TODOParrot is *not a finished product*! I work on the project in conjunction with the examples found in the forthcoming book.
