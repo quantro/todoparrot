@@ -38,7 +38,7 @@
         <li><a href="{{ URL::Route('lists.index') }}">Your Lists</a></li>
         <li><a href="/about">About</a></li>
           @if(!Auth::check()) 
-            <li><a href="{{ URL::Route('users.create') }}">Create Account</a></li>
+            <li><a href="{{ URL::Route('signup') }}">Create Account</a></li>
             <li><a href="{{ URL::Route('login') }}">Sign In</a></li>
           @else
             <li><a href="{{ URL::Route('users.index') }}">Hi, {{Auth::user()->first_name}}</a></li>

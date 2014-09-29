@@ -2,6 +2,6 @@
 
 @section('content')
 
-hello index
+Forthcoming: some cool stats about TODOParrot users and their lists.
 
 @stop

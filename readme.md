@@ -4,12 +4,13 @@ TODOParrot ([http://todoparrot.com](http://todoparrot.com)) is the companion pro
 
 TODOParrot is built atop the forthcoming Laravel 5. While likely fairly unstable and currently not feature complete, it nonetheless provides interested Laravel developers with the opportunity to have a look at Laravel 5's many new features, not to mention better understand how Laravel works in general. In particular it demonstrates implementation of the following features:
 
-* Blade templating
-* Model associations 
-* Forms integration 
-* Database queries 
-* User authentication: TODOParrot does *not* currently use the brand new Auth generators found in a recent Laravel 5 commit. I will be updating TODOParrot very soon to take advantage of this great feature.
-* Unit testing
+* Blade Templating: A simple master layout is used. Nothing new here but a useful example for Laravel newbies.
+* Model Relations: TODOParrot users can have many lists, and each list can have many tasks. These relations have been integrated into the models.
+* Forms Integration: The new Laravel 5 Form Request feature is used for creating new lists and tasks. 
+* Database Queries: The various implemented queries are pretty basic but should provide Laravel newcomers with a few useful examples.
+* User Authentication: TODOParrot uses the new Laravel 5 authentication generator.
+* Unit Testing:
+* Bootstrap Integration: Because I can't even write my own name legibly let alone design a nice website, TODOParrot uses the Bootstrap framework.
 
 TODOParrot is *not a finished product*! I work on the project in conjunction with the examples found in the forthcoming book.
 
@@ -17,8 +18,8 @@ In the coming days and weeks I'll continue to improve TODOParrot as I continue w
 
 * Improved form workflow: Streamlining of the form validation process.
 * Database seeding: I'll provide some sample account and list data so you can experiment using a realistic data set. 
-* Advanced unit testing: Plenty to do here
-* Additional account features: Account confirmation and password recovery, among others
+* Much more testing: Plenty to do here
+* Additional account features: Account confirmation and password recovery, to name a few features.
 * List/task editing: Currently users can only create lists and create/modify tasks. In the very near future I'll add list and task deletion.
 * User preferences: I'd like to add some simple customization capabilities such as e-mail notification when a task date expires.
 * An administration console: The console would allow administrators to view all user accounts and lists.

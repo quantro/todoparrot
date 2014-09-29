@@ -11,20 +11,25 @@
 |
 */
 
-Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
+get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
 
-Route::get('/about', function()
+get('/about', function()
 {
   return View::make('about');     
 }); 
 
-Route::post('lists/{lists}/tasks/{tasks}/complete', array('as' => 'complete_task', 'uses' => 'TasksController@complete')); 
+post('lists/{lists}/tasks/{tasks}/complete', array('as' => 'complete_task', 'uses' => 'TasksController@complete')); 
 Route::resource('lists', 'ListsController');
 Route::resource('lists.tasks', 'TasksController');
 
-Route::get('/login', array('as' => 'login', 'uses' => 'UsersController@login'));
-Route::post('/login', array('as' => 'process_login', 'uses' => 'UsersController@processLogin'));
+# Authorization routes
 
-Route::get('/logout', array('as' => 'logout', 'uses' => 'UsersController@logout'));
+get('/login', array('as' => 'login', 'uses' => 'Auth\AuthController@getLogin'));
+post('/login', array('as' => 'login', 'uses' => 'AUth\AuthController@postLogin'));
+
+get('/logout', array('as' => 'logout', 'uses' => 'Auth\AuthController@getLogout'));
+
+get('/signup', 'Auth\AuthController@getRegister');
+post('/signup', array('as' => 'signup', 'uses' => 'Auth\AuthController@postRegister'));
+
 Route::resource('users', 'UsersController');
-

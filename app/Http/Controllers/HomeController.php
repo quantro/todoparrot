@@ -1,7 +1,6 @@
 <?php namespace todoparrot\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use todoparrot\Todolist;
 
 class HomeController extends Controller {
 

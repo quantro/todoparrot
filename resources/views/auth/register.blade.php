@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-6">
-{!! Form::open(array('route' => 'users.store', 'class' => 'form')) !!}
+{!! Form::open(array('route' => 'signup', 'class' => 'form')) !!}
     
 <h1>Create a TODOParrot Account</h1>
 
@@ -32,6 +32,10 @@ Creating a TODOParrot account is free and easy. Once created, you'll be able to 
 <div class="form-group">
     {!! Form::label('Your Password') !!}
     {!! Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password')) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('Confirm Password') !!}
+    {!! Form::password('password_confirmation', array('class'=>'form-control', 'placeholder'=>'Confirm Password')) !!}
 </div>
  
 <div class="form-group">
