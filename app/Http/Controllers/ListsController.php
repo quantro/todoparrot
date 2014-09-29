@@ -2,6 +2,8 @@
 
 use Illuminate\Routing\Controller;
 use todoparrot\Http\Requests\ListCreateFormRequest;
+use todoparrot\Todolist;
+use todoparrot\User;
 
 class ListsController extends Controller {
 
@@ -19,7 +21,7 @@ class ListsController extends Controller {
         $id = \Auth::id();
 
         // Retrieve the user's lists, ordered by creation date descending 
-        $lists = \todoparrot\User::find($id)->lists()->orderBy('created_at', 'desc')->get();
+        $lists = User::find($id)->lists()->orderBy('created_at', 'desc')->get();
      
         return View('lists.index')->with('lists', $lists);
 
@@ -50,12 +52,12 @@ class ListsController extends Controller {
 	public function store(ListCreateFormRequest $request)
   {
 
-    $list = new \todoparrot\Todolist(array(
+    $list = new Todolist(array(
       'name' => \Input::get('name'),
       'description' => \Input::get('description')
     ));
 
-    $user = \todoparrot\User::find(\Auth::id());
+    $user = User::find(\Auth::id());
     
     $list = $user->lists()->save($list);
 
@@ -72,7 +74,7 @@ class ListsController extends Controller {
 	 */
 	public function show($id)
   {
-    $list = \todoparrot\Todolist::find($id);
+    $list = Todolist::find($id);
     return View('lists.show')->with('list', $list);
 	}
 

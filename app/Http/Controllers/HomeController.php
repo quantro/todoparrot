@@ -1,6 +1,7 @@
 <?php namespace todoparrot\Http\Controllers;
 
 use Illuminate\Routing\Controller;
+use todoparrot\Todolist;
 
 class HomeController extends Controller {
 
@@ -19,12 +20,7 @@ class HomeController extends Controller {
 
 	public function index()
   {
-    
-    $tasks = \todoparrot\Todolist::all();
-        $data = array('username' => 'wjgilmore',
-                    'date' => date('Y-m-d'));                                                                                                                                   
-     
-            return view('hello')->with('name', 'San Juan Vacation')->with('date', '2014-09-16');
+      return view('hello');
 	}
 
 }

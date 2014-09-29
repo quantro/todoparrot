@@ -2,6 +2,9 @@
 
 use Illuminate\Routing\Controller;
 use todoparrot\Http\Requests\TaskCreateFormRequest;
+use todoparrot\Task;
+use todoparrot\Todolist;
+use todoparrot\User;
 
 class TasksController extends Controller {
 
@@ -24,7 +27,7 @@ class TasksController extends Controller {
 	 */
 	public function create($listId)
   {
-    $list = \todoparrot\Todolist::find($listId);
+    $list = Todolist::find($listId);
 		return view('tasks.create')->with('list', $list);;
 	}
 
@@ -37,11 +40,11 @@ class TasksController extends Controller {
 	public function store($listId, TaskCreateFormRequest $request)
   {
 
-    $user = \todoparrot\User::find(\Auth::id());
+    $user = User::find(\Auth::id());
 
     if ($user->owns($listId)) {
 
-      $list = \todoparrot\Todolist::find($listId);
+      $list = Todolist::find($listId);
 
       if (\Input::get('done') == 'true')
       {
@@ -50,7 +53,7 @@ class TasksController extends Controller {
           $done = 0;
         }
 
-      $task = new \todoparrot\Task(array(
+      $task = new Task(array(
         'name' => \Input::get('name'),
         'due' => \Input::get('due'),
         'done' => $done
@@ -75,8 +78,8 @@ class TasksController extends Controller {
   public function complete($listId, $taskId)
   {
     
-    $user = \todoparrot\User::find(\Auth::id());
-    $list = \todoparrot\Todolist::find($listId);
+    $user = User::find(\Auth::id());
+    $list = Todolist::find($listId);
 
     if ($user->owns($listId)) {
 
@@ -109,7 +112,7 @@ class TasksController extends Controller {
 	public function show($listId, $taskId)
   {
 
-    $task = \todoparrot\Task::find($taskId);
+    $task = Task::find($taskId);
     
 		return view('tasks.show')->with('task', $task);
 
@@ -124,7 +127,7 @@ class TasksController extends Controller {
 	 */
 	public function edit($id)
   {
-    $task = \todoparrot\Task::find($id);
+    $task = Task::find($id);
 		return view('tasks.show')->with('task', $task);
 	}
 
@@ -152,9 +155,9 @@ class TasksController extends Controller {
     
       $user = \Auth::user();
 
-      $task = \todoparrot\Task::find($id);
+      $task = Task::find($id);
 
-      $list = \todoparrot\Todolist::find($task->todolist_id);
+      $list = Todolist::find($task->todolist_id);
 
       if ($user->owns($list->id)) {
 
