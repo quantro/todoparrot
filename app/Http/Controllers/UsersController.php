@@ -1,10 +1,10 @@
-<?php namespace App\Http\Controllers;
+<?php namespace todoparrot\Http\Controllers;
 
-use App\Http\Requests\UserLoginFormRequest;
-use App\Http\Requests\UserFormRequest;
+use todoparrot\Http\Requests\UserLoginFormRequest;
+use todoparrot\Http\Requests\UserFormRequest;
 use Illuminate\Routing\Controller;
 use Response;
-use App\User;
+use todoparrot\User;
 
 class UsersController extends Controller {
 

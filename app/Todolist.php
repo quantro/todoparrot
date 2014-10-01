@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace todoparrot;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,7 +14,7 @@ class Todolist extends Model {
    */
   public function user()
   {
-      return $this->belongsTo('\App\User');
+      return $this->belongsTo('\todoparrot\User');
   }
 
   /**
@@ -23,7 +23,7 @@ class Todolist extends Model {
    */
   public function tasks()
   {
-    return $this->hasMany('\App\Task');
+    return $this->hasMany('\todoparrot\Task');
   }
 
   /**

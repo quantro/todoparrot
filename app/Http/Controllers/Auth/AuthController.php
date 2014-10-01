@@ -1,12 +1,12 @@
-<?php namespace App\Http\Controllers\Auth;
+<?php namespace todoparrot\Http\Controllers\Auth;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Auth\Authenticator;
 
-use App\Http\Requests\Auth\LoginRequest;
-use App\Http\Requests\Auth\RegisterRequest;
+use todoparrot\Http\Requests\Auth\LoginRequest;
+use todoparrot\Http\Requests\Auth\RegisterRequest;
 
-use App\User;
+use todoparrot\User;
 
 class AuthController extends Controller {
 

@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace todoparrot;
 
 use Illuminate\Auth\UserTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -33,7 +33,7 @@ class User extends Model implements UserContract, RemindableContract {
    */
   public function lists()
   {
-      return $this->hasMany('\App\Todolist');
+      return $this->hasMany('\todoparrot\Todolist');
   }
 
   /**
@@ -43,7 +43,7 @@ class User extends Model implements UserContract, RemindableContract {
   public function owns($listId)
   {
 
-    $list = \App\Todolist::find($listId);
+    $list = \todoparrot\Todolist::find($listId);
 
     if ($list->user_id == $this->id)
     {

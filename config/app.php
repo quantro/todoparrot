@@ -98,13 +98,13 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'App\Providers\AppServiceProvider',
-		'App\Providers\ArtisanServiceProvider',
-    'App\Providers\ErrorServiceProvider',
-    'App\Providers\EventServiceProvider',
-		'App\Providers\FilterServiceProvider',
-		'App\Providers\LogServiceProvider',
-		'App\Providers\RouteServiceProvider',
+		'todoparrot\Providers\AppServiceProvider',
+		'todoparrot\Providers\ArtisanServiceProvider',
+    'todoparrot\Providers\ErrorServiceProvider',
+    'todoparrot\Providers\EventServiceProvider',
+		'todoparrot\Providers\FilterServiceProvider',
+		'todoparrot\Providers\LogServiceProvider',
+		'todoparrot\Providers\RouteServiceProvider',
 
 		/*
 		 * Laravel Framework Service Providers...

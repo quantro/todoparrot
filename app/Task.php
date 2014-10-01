@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace todoparrot;
 
 use Illuminate\Database\Eloquent\Model;
 

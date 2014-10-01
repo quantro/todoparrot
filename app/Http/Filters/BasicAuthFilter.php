@@ -1,4 +1,4 @@
-<?php namespace App\Http\Filters;
+<?php namespace todoparrot\Http\Filters;
 
 use Auth;
 
