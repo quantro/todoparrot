@@ -83,8 +83,11 @@ class AuthController extends Controller {
 	 */
 	public function postLogin(LoginRequest $request)
   {
-    
-      if (\Input::get('remember') == true)
+
+      $formInput = $request->input();
+
+   #\Log::info(var_dump($request->input())); 
+      if ($formInput['remember'] == true)
       {
         $remember = true;
       } else {
