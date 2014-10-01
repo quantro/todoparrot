@@ -37,12 +37,12 @@
         <li><a href="/">Home</a></li>
         <li><a href="{{ URL::Route('lists.index') }}">Your Lists</a></li>
         <li><a href="/about">About</a></li>
-          @if(!Auth::check()) 
-            <li><a href="{{ URL::Route('signup') }}">Create Account</a></li>
-            <li><a href="{{ URL::Route('login') }}">Sign In</a></li>
-          @else
+          @if(Auth::check())
             <li><a href="{{ URL::Route('users.index') }}">Hi, {{Auth::user()->first_name}}</a></li>
             <li><a href="{{ URL::Route('logout') }}">Sign Out</a></li>
+          @else
+            <li><a href="{{ URL::Route('signup') }}">Create Account</a></li>
+            <li><a href="{{ URL::Route('login') }}">Sign In</a></li>
           @endif
         </li>
       </ul>
