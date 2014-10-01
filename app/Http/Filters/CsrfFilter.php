@@ -1,4 +1,4 @@
-<?php namespace todoparrot\Http\Filters;
+<?php namespace App\Http\Filters;
 
 use Session;
 use Illuminate\Http\Request;

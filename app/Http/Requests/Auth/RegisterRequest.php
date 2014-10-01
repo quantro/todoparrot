@@ -1,4 +1,4 @@
-<?php namespace todoparrot\Http\Requests\Auth;
+<?php namespace App\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
 

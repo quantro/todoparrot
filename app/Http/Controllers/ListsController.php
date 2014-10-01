@@ -1,9 +1,9 @@
-<?php namespace todoparrot\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use todoparrot\Http\Requests\ListCreateFormRequest;
-use todoparrot\Todolist;
-use todoparrot\User;
+use App\Http\Requests\ListCreateFormRequest;
+use App\Todolist;
+use App\User;
 
 class ListsController extends Controller {
 

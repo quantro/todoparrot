@@ -1,6 +1,6 @@
-<?php namespace todoparrot\Providers;
+<?php namespace App\Providers;
 
-use Illuminate\Routing\FilterServiceProvider as ServiceProvider;
+use Illuminate\Foundation\Support\Providers\FilterServiceProvider as ServiceProvider;
 
 class FilterServiceProvider extends ServiceProvider {
 
@@ -10,7 +10,7 @@ class FilterServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $before = [
-		'todoparrot\Http\Filters\MaintenanceFilter',
+		'App\Http\Filters\MaintenanceFilter',
 	];
 
 	/**
@@ -28,10 +28,10 @@ class FilterServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $filters = [
-		'auth' => 'todoparrot\Http\Filters\AuthFilter',
-		'auth.basic' => 'todoparrot\Http\Filters\BasicAuthFilter',
-		'csrf' => 'todoparrot\Http\Filters\CsrfFilter',
-		'guest' => 'todoparrot\Http\Filters\GuestFilter',
+		'auth' => 'App\Http\Filters\AuthFilter',
+		'auth.basic' => 'App\Http\Filters\BasicAuthFilter',
+		'csrf' => 'App\Http\Filters\CsrfFilter',
+		'guest' => 'App\Http\Filters\GuestFilter',
 	];
 
 }

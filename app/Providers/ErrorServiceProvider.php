@@ -1,4 +1,4 @@
-<?php namespace todoparrot\Providers;
+<?php namespace App\Providers;
 
 use App, Log, Exception;
 use Illuminate\Support\ServiceProvider;

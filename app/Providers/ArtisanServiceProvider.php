@@ -1,4 +1,4 @@
-<?php namespace todoparrot\Providers;
+<?php namespace App\Providers;
 
 use InspireCommand;
 use Illuminate\Support\ServiceProvider;
@@ -12,7 +12,7 @@ class ArtisanServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->commands('todoparrot\Console\InspireCommand');
+		$this->commands('App\Console\InspireCommand');
 	}
 
 }

@@ -1,10 +1,10 @@
-<?php namespace todoparrot\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use todoparrot\Http\Requests\TaskCreateFormRequest;
-use todoparrot\Task;
-use todoparrot\Todolist;
-use todoparrot\User;
+use App\Http\Requests\TaskCreateFormRequest;
+use App\Task;
+use App\Todolist;
+use App\User;
 
 class TasksController extends Controller {
 

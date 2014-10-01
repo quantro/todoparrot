@@ -1,12 +1,12 @@
-<?php namespace todoparrot\Http\Controllers\Auth;
+<?php namespace App\Http\Controllers\Auth;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Auth\Authenticator;
 
-use todoparrot\Http\Requests\Auth\LoginRequest;
-use todoparrot\Http\Requests\Auth\RegisterRequest;
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RegisterRequest;
 
-use todoparrot\User;
+use App\User;
 
 class AuthController extends Controller {
 
@@ -84,10 +84,9 @@ class AuthController extends Controller {
 	public function postLogin(LoginRequest $request)
   {
 
-      $formInput = $request->input();
-
-   #\Log::info(var_dump($request->input())); 
-      if ($formInput['remember'] == true)
+      // The remember input is not passed through the
+      // request. Is there a better way to retrieve this value? 
+      if (\Input::get('remember') == true)
       {
         $remember = true;
       } else {

@@ -1,4 +1,4 @@
-<?php namespace todoparrot\Http\Controllers\Auth;
+<?php namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
