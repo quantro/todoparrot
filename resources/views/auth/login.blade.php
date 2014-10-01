@@ -27,7 +27,7 @@ Sign in to your TODOParrot account to begin maximizing your productivity!
  
 <div class="checkbox">
     {!! Form::label('Remember me') !!}
-    {!! Form::checkbox('done', 'true') !!}
+    {!! Form::checkbox('remember', 'true') !!}
 </div>
 
 <div class="form-group">
