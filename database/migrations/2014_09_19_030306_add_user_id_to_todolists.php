@@ -13,8 +13,8 @@ class AddUserIdToTodolists extends Migration {
 	public function up()
 	{
     Schema::table('todolists', function(Blueprint $table) {
-        $table->integer('user_id')->unsigned()->default(0);
-        $table->foreign('user_id')->references('id')->on('users');
+        $table->integer('user_id')->unsigned();
+        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
     });
 	}
 
@@ -24,8 +24,9 @@ class AddUserIdToTodolists extends Migration {
 	 * @return void
 	 */
 	public function down()
-	{
-		Schema::table('todolists', function(Blueprint $table) {
+  {
+    Schema::table('todolists', function(Blueprint $table) {
+        $table->dropForeign('todolists_user_id_foreign');
         $table->dropColumn('user_id');
     });
 	}

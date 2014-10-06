@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateTodoListsTable extends Migration {
+class CreateTodolistsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -20,7 +20,6 @@ class CreateTodoListsTable extends Migration {
 			$table->timestamps();
 		});
 	}
-
 
 	/**
 	 * Reverse the migrations.

@@ -23,7 +23,7 @@ class CreateTasksTable extends Migration {
     });
 
     Schema::table('tasks', function(Blueprint $table) {
-      $table->foreign('todolist_id')->references('id')->on('todolists');
+      $table->foreign('todolist_id')->references('id')->on('todolists')->onDelete('cascade');
     });
 
 	}
