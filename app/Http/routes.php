@@ -25,7 +25,7 @@ Route::resource('lists.tasks', 'TasksController');
 # Authorization routes
 
 get('/login', array('as' => 'login', 'uses' => 'Auth\AuthController@getLogin'));
-post('/login', array('as' => 'login', 'uses' => 'AUth\AuthController@postLogin'));
+post('/login', array('as' => 'login', 'uses' => 'Auth\AuthController@postLogin'));
 
 get('/logout', array('as' => 'logout', 'uses' => 'Auth\AuthController@getLogout'));
 
