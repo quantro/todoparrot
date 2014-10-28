@@ -1,5 +1,7 @@
 ## TODOParrot
 
+**THIS IS FOR THE MOMENT HORRIBLY BROKEN DUE TO LARAVEL 5 INSTABILITY** Stay tuned, I am actively [monitoring development](https://github.com/laravel/laravel/commits/develop) and will update TODOParrot once things have settled down.
+
 TODOParrot ([http://todoparrot.com](http://todoparrot.com)) is the companion project to the forthcoming book, "Easy Laravel 5" ([http://easylaravelbook.com](http://easylaravelbook.com)), written by bestselling author [W. Jason Gilmore](http://wjgilmore.com). Be sure to check out the book website and subscribe to the notification list in order to receive a nice discount when it publishes. Otherwise, if you'd like to begin reading the book now you currently can purchase a beta version on [EasyLaravelBook.com](http://easylaravelbook.com) or [Leanpub](https://leanpub.com/easylaravel/) at a discounted cost, and receive free updates for life!
 
 Warning: Laravel 5 is unstable, particularly so in regards to recent commits. I've had to do some serious backflips to keep TODOParrot working in conjunction with the very latest development version. Be patient, this is bleeding edge technology. Regardless, hopefully even this feature incomplete application provides interested developers with the opportunity to have a look at Laravel 5's many new features, not to mention better understand how Laravel works in general. In particular it demonstrates implementation of the following features:
