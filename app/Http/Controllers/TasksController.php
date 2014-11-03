@@ -49,9 +49,9 @@ class TasksController extends Controller {
       if (\Input::get('done') == 'true')
       {
         $done = 1;
-        } else {
-          $done = 0;
-        }
+      } else {
+        $done = 0;
+      }
 
       $task = new Task(array(
         'name' => \Input::get('name'),

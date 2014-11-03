@@ -14,7 +14,7 @@ Created on: {{ $list->created_at }} Last modified: {{ $list->updated_at }}<br />
 @if($list->tasks->count() == 0)
 
 <p>
-No tasks assigned to this list. <a href="/lists/{{$list->id}}/tasks/create">Add a task</a>.
+No tasks assigned to this list. <a href="{{ URL::route('lists.tasks.create', [$list->id]) }}">Add a task</a>.
 </p>
 
 @else
@@ -62,7 +62,7 @@ No tasks assigned to this list. <a href="/lists/{{$list->id}}/tasks/create">Add 
   </div>
 
 <p>
-<a href="/lists/{{$list->id}}/tasks/create" class='btn btn-primary'>Add a task</a>
+<a href="{{ URL::route('lists.tasks.create', [$list->id]) }}" class='btn btn-primary'>Add a task</a>
 </p>
 
 @endif
