@@ -10,8 +10,10 @@
 
   <link rel="stylesheet" href="/css/bootswatch.min.css">
   <link rel="stylesheet" href="/css/styles.css">
+  @if(isset($_SERVER['REQUEST_URL']))
   @if($_SERVER["REQUEST_URI"] == '/')
     <link rel="stylesheet" href="/css/home.css">
+  @endif
   @endif
 	<style>
 		@import url(//fonts.googleapis.com/css?family=Lato:700);
