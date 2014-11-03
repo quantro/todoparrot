@@ -1,4 +1,4 @@
-<?php namespace App\Providers;
+<?php namespace todoparrot\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -11,10 +11,10 @@ class RouteServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $middleware = [
-		'auth' => 'App\Http\Middleware\Authenticated',
-		'auth.basic' => 'App\Http\Middleware\AuthenticatedWithBasicAuth',
-		'csrf' => 'App\Http\Middleware\CsrfTokenIsValid',
-		'guest' => 'App\Http\Middleware\IsGuest',
+		'auth' => 'todoparrot\Http\Middleware\Authenticated',
+		'auth.basic' => 'todoparrot\Http\Middleware\AuthenticatedWithBasicAuth',
+		'csrf' => 'todoparrot\Http\Middleware\CsrfTokenIsValid',
+		'guest' => 'todoparrot\Http\Middleware\IsGuest',
 	];
 
 	/**
@@ -38,7 +38,7 @@ class RouteServiceProvider extends ServiceProvider {
 	 */
 	public function map(Router $router)
 	{
-		$router->group(['namespace' => 'App\Http\Controllers'], function($router)
+		$router->group(['namespace' => 'todoparrot\Http\Controllers'], function($router)
 		{
 			require app_path('Http/routes.php');
 		});

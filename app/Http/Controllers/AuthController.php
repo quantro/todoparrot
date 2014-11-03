@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers;
+<?php namespace todoparrot\Http\Controllers;
 
-use App\Http\Requests\LoginRequest;
+use todoparrot\Http\Requests\LoginRequest;
 use Illuminate\Contracts\Auth\Guard;
-use App\Http\Requests\RegisterRequest;
+use todoparrot\Http\Requests\RegisterRequest;
 
 class AuthController extends Controller {
 

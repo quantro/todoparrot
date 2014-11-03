@@ -1,4 +1,4 @@
-<?php namespace App\Http;
+<?php namespace todoparrot\Http;
 
 use Exception;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -11,13 +11,13 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $middleware = [
-		'App\Http\Middleware\UnderMaintenance',
+		'todoparrot\Http\Middleware\UnderMaintenance',
 		'Illuminate\Cookie\Middleware\EncryptCookies',
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToRequest',
 		'Illuminate\Session\Middleware\ReadSession',
 		'Illuminate\Session\Middleware\WriteSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'App\Http\Middleware\VerifyCsrfToken',
+		'todoparrot\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**

@@ -1,4 +1,4 @@
-<?php namespace App\Http\Middleware;
+<?php namespace todoparrot\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Response;
