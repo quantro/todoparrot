@@ -124,8 +124,8 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-        'Illuminate\Html\HtmlServiceProvider'
-
+        'Illuminate\Html\HtmlServiceProvider',
+        'Way\Generators\GeneratorsServiceProvider'
 	],
 
 	/*

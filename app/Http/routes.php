@@ -42,3 +42,6 @@ $router->post('/signup', array('as' => 'signup', 'uses' => 'AuthController@postR
 $router->controller('password', 'PasswordController');
 
 $router->resource('lists', 'ListsController');
+
+$router->post('lists/{lists}/tasks/{tasks}/complete', array('as' => 'complete_task', 'uses' => 'TasksController@complete'));
+$router->resource('lists.tasks', 'TasksController');
