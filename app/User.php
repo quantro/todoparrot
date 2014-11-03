@@ -17,11 +17,41 @@ class User extends Model implements UserContract, CanResetPasswordContract {
 	 */
 	protected $table = 'users';
 
+  protected $fillable = ['first_name', 'last_name', 'email', 'password'];
+
+
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+
+  /*
+   * Each user can have one or more lists
+   *
+   */
+  public function lists()
+  {
+      return $this->hasMany('\todoparrot\Todolist');
+  }
+
+  /**
+   * Determine whether the user owns a TODO list.
+   *
+   */
+  public function owns($listId)
+  {
+
+    $list = \todoparrot\Todolist::find($listId);
+
+    if ($list->user_id == $this->id)
+    {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
 
 }

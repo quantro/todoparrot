@@ -3,6 +3,7 @@
 use todoparrot\Http\Requests\LoginRequest;
 use Illuminate\Contracts\Auth\Guard;
 use todoparrot\Http\Requests\RegisterRequest;
+use todoparrot\User;
 
 class AuthController extends Controller {
 
@@ -44,11 +45,20 @@ class AuthController extends Controller {
 	 */
 	public function postRegister(RegisterRequest $request)
 	{
-		// Registration form is valid, create user...
+
+        $formInput = $request->input();
+
+        $user = User::create([
+            'first_name' => $formInput['first_name'],
+            'last_name' => $formInput['last_name'],
+            'email' => $formInput['email'],
+            'password' => \Hash::make($formInput['password'])
+        ]);
+
 
 		$this->auth->login($user);
 
-		return redirect('/');
+		return redirect('/')->with('message', 'Thank you for registering!');
 	}
 
 	/**
@@ -69,7 +79,17 @@ class AuthController extends Controller {
 	 */
 	public function postLogin(LoginRequest $request)
 	{
-		if ($this->auth->attempt($request->only('email', 'password')))
+
+        // The remember input is not passed through the
+        // request. Is there a better way to retrieve this value?
+        if (\Input::get('remember') == true)
+        {
+            $remember = true;
+        } else {
+            $remember = false;
+        }
+
+		if ($this->auth->attempt($request->only('email', 'password'), $remember))
 		{
 			return redirect('/');
 		}

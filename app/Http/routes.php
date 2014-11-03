@@ -26,4 +26,19 @@ $router->get('/', 'HomeController@index');
 
 $router->controller('auth', 'AuthController');
 
+$router->get('/about', function()
+{
+    return View::make('about');
+});
+
+$router->get('/login', array('as' => 'login', 'uses' => 'AuthController@getLogin'));
+$router->post('/login', array('as' => 'login', 'uses' => 'AuthController@postLogin'));
+
+$router->get('/logout', array('as' => 'logout', 'uses' => 'AuthController@getLogout'));
+
+$router->get('/signup', 'AuthController@getRegister');
+$router->post('/signup', array('as' => 'signup', 'uses' => 'AuthController@postRegister'));
+
 $router->controller('password', 'PasswordController');
+
+$router->resource('lists', 'ListsController');
